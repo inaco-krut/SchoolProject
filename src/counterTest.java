@@ -1,37 +1,41 @@
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class counterTest {
     @Test
-    public void LineCounter () {
+    public void LineCounter() {
         // Arrange
         counter program = new counter();
         // Act
-        program.LineCounter(0,"");
+        program.LineCounter(10, "Test");
         int actual = program.returnLines();
         // Assert
-        int expected = 0;
+        int expected = 10;
         assertEquals(actual, expected);
     }
+
+    @Test
+    public void returnLongestWord() {
+        // Arrange
+        counter program = new counter();
+        // Act
+        program.longestWord("hej hejsansvejsan");
+        String actual = program.returnLongestWord();
+        // Assert
+        String expected = "hejsansvejsan";
+        assertEquals(actual, expected);
+    }
+
     @Test
     public void LookForStop() {
         // Arrange
         counter program = new counter();
         // Act
-        boolean actual = program.lookForStop(String.valueOf(true));
+        program.lookForStop("hej stop");
+        boolean actual = program.returnStopper();
         // Assert
         boolean expected = true;
-        assertEquals(true,true);
-    }
-    @Test
-    public void returnWord() {
-        // Arrange
-        counter program = new counter();
-        // Act
-        program.WordCounter("");
-        int actual = program.returnWord();
-        // Assert
-        int expected = -1;
         assertEquals(actual, expected);
     }
 }

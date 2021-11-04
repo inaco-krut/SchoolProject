@@ -13,7 +13,7 @@ public class output {
         System.out.println("\nWelcome Staffan.. Please enter a few random words to receive the results.");
 
         //loop & final output
-        while (!program.lookForStop(usrInput)) {
+        while (!program.returnStopper()) {
             usrInput = input.nextLine();
             program.charCounter(usrInput);
             program.LineCounter(1,usrInput);
